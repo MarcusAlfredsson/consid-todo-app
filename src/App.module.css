@@ -16,6 +16,7 @@
 
 .content {
   grid-area: content;
+  text-align: center;
 }
 .App-header__title {
   font-size: 56px;

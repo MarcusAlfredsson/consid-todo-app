@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app component snapshot that template adds more todos 1`] = `
+<div>
+  <div>
+    Todo app
+  </div>
+  <div>
+    <img
+      alt="logo"
+      src="logo.svg"
+    />
+  </div>
+  <div>
+    <ul>
+      <li>
+        test snapshot
+      </li>
+    </ul>
+    <div>
+      <input
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        add me
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -1,44 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Övingar för student kväll om React
+Applikationen kan i nulägget lägg till en todo genom att skriva in input fältet.
 
-## Available Scripts
+### Steg 1(addTodo):
+  I React vill man dela upp funktionalitet i mindre komponenter, dels för att kunna återanvända generella komponenter
+  och dels för att bryta isär logik och templates till mindre delar. I steg 1 ska ni ändra så att istället för att app
+  komponenten spara texten för den ny inputen ska den hanteras i addTodo komponenten. Sedan ska app komponenten lyssna på
+  ett event från addTodo komponenten om när den ska lägga till en todo i state variablen todos.
 
-In the project directory, you can run:
+### Steg 2(removeTodo):
+  I det här steget ska ni dels lägga in en knapp för att kunna ta bort en nyligen tillagd todo, kolla efer kommentar
 
-### `npm start`
+### Steg 3
+  Nu ska ni lägga till en checkbox för att kunna markera en todo som gjord, todo ska även byta färg när checkboxen är ikryssad
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Steg 4
+  Nu vill jag att ni:
+  - sparar todos i api när den lagts till i när man klickar på lägg till knappen,
+  - hämtar todos ifrån API under mount
+  - samt tar bort todos i API när den tagits bort i listan i applicationen
+API returnerar en promise när den har svarat som man ska lyssna på
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+API används t.ex. för att hämta listan
+getList().then((res) => )
 
-### `npm test`
+### Steg 5
+Nu ska ni lägga till så att man enbart kan ta bort todos om man först klickar på en edit knapp, för att inte kunna ta bort todos genom felklick.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
