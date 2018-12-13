@@ -1,14 +1,15 @@
 import React from 'react';
 
-class addTodo extends React.Component {
+class AddTodo extends React.Component {
   state = { text: '' };
   
   onInputChange = () => {
-    // TODO Steg 1: ska spara strängen ifrån inputen i state variabeln text
+    // TODO Step 1: save string in state
   };
 
   addTodo = () => {
-    // TODO Steg 1: ska skicka upp event om att lägga till todo i listan todos i app komponenten
+    // TODO Step 2: send string to App component to add todo to the state of todos
+    // empty text state
   };
 
   render() {
@@ -20,4 +21,4 @@ class addTodo extends React.Component {
   }
 }
 
-export default addTodo;
+export default AddTodo;

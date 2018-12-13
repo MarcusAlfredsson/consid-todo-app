@@ -1,28 +1,33 @@
-## Övingar för student kväll om React
-Applikationen kan i nulägget lägg till en todo genom att skriva in input fältet.
+## Exersices for learning react
+This application is a set of exersices for learning react. I current state the application is a todo app with all its logic
+in App. The exersices will show how to refactor out logic into smaller components and also how to expand the app with more functionality.
 
-### Steg 1(addTodo):
-  I React vill man dela upp funktionalitet i mindre komponenter, dels för att kunna återanvända generella komponenter
-  och dels för att bryta isär logik och templates till mindre delar. I steg 1 ska ni ändra så att istället för att app
-  komponenten spara texten för den ny inputen ska den hanteras i addTodo komponenten. Sedan ska app komponenten lyssna på
-  ett event från addTodo komponenten om när den ska lägga till en todo i state variablen todos.
+### Step 1(addTodo):
+  In current App holds all the logic. In the first step you should move out the logic of the input to the addTodo component. So after finished AddTodo saves the text input in a state variable and when the button in AddTodo is clicked, the button should emit an event to App and in App save the todo in its state variabel todos. Also remove the logic of text handling in App.
 
-### Steg 2(removeTodo):
-  I det här steget ska ni dels lägga in en knapp för att kunna ta bort en nyligen tillagd todo, kolla efer kommentar
+### Step 2(removeTodo):
+  In this example we want to add a remove function, there should be one remove button per todo. Use the Todo component, the list should render a Todo component, similar to:
 
-### Steg 3
-  Nu ska ni lägga till en checkbox för att kunna markera en todo som gjord, todo ska även byta färg när checkboxen är ikryssad
+  ...map(todo => <Todo todo={todo} onRemove={this.removeTodo} />)...
 
-### Steg 4
-  Nu vill jag att ni:
-  - sparar todos i api när den lagts till i när man klickar på lägg till knappen,
-  - hämtar todos ifrån API under mount
-  - samt tar bort todos i API när den tagits bort i listan i applicationen
-API returnerar en promise när den har svarat som man ska lyssna på
+  The Todo component is a function component, so it has no state. the remove event should send the todo to be removed and the todo should be removed from the state in App. 
 
-API används t.ex. för att hämta listan
+
+### Step 3
+  Now we want to mark a todo as done, so each todo should have a checkbox. When the checkbox is checked the todo should change color or style to show that it is done.
+
+### Step 4
+  In this step we want to save todos over page reload, so we dont have to add the todos each time we access the todo application.
+  Their is a API file which simulates an API, it save to localStorage and returns promises to simulate the behavior of an API.
+  So:
+  - on mount of the App component should fetch all todos from the api, during componentDidMount.
+  - when a todo is saved, it should first be saved to the api, and if successful the save the todo to state.
+  - same goes for removing a todo.
+
+API is used for example:
 getList().then((res) => )
+where res is the list of todos
 
-### Steg 5
-Nu ska ni lägga till så att man enbart kan ta bort todos om man först klickar på en edit knapp, för att inte kunna ta bort todos genom felklick.
+### Step 5
+Now we want to add a edit button, so we cannot delete a todo by mistake. The delete buttons should only be visible when the edit button is active.
 

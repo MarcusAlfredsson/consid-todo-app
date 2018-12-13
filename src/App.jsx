@@ -23,8 +23,7 @@ class App extends Component {
   }
 
   removeTodo = (todo) => {
-    // TODO steg 2: ta bort den todo som kommer in som input i state variablen todos
-    // tips, använd filter.
+    // TODO step 2: remove incoming todo from state
   }
 
   render() {
